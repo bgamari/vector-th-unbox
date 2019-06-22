@@ -128,7 +128,7 @@ derivingUnbox name argsQ toRepQ fromRepQ = do
         return $ NewtypeInstD [] Nothing tmp MAYBE_KIND
             (NormalC mvName [(lazy, ConT ''MVector `AppT` s `AppT` rep)]) []
 #else
-    let newtypeMVector = NewtypeInstD [] ''MVector [s, typ] MAYBE_KIND []
+    let newtypeMVector = NewtypeInstD [] ''MVector [s, typ] MAYBE_KIND
             (NormalC mvName [(lazy, ConT ''MVector `AppT` s `AppT` rep)]) []
 #endif
     let mvCon = ConE mvName
